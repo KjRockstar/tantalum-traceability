@@ -30,3 +30,28 @@ Mine → Smelter → Manufacturer
              ↑
           Auditor
        (verification)
+
+
+## Fabric Network
+
+The project uses a Hyperledger Fabric permissioned network based on the Fabric test-network.
+
+### Network Components
+
+```text
+                    Hyperledger Fabric Network
+                           mychannel
+                              │
+              ┌───────────────┴───────────────┐
+              │                               │
+           Org1MSP                         Org2MSP
+              │                               │
+       ┌──────┴──────┐                 ┌──────┴──────┐
+       │             │                 │             │
+   Peer0 Org1     CA Org1          Peer0 Org2     CA Org2
+       │                               │
+       └───────────────┬───────────────┘
+                       │
+                 Orderer Service
+                       │
+                   Orderer CA
